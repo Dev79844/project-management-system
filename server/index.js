@@ -4,10 +4,12 @@ const mongoose = require('mongoose')
 const {graphqlHTTP} = require('express-graphql')
 const schema = require('./schema/schema')
 const morgan = require('morgan')
+const cors = require('cors')
 
 const app = express()
 
-app.use(morgan('tiny'))
+app.use(cors())
+// app.use(morgan('tiny'))
 
 app.use('/graphql', graphqlHTTP({
     schema,
