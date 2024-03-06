@@ -28,7 +28,7 @@ const cache = new InMemoryCache({
 })
 
 const client = new ApolloClient({
-  uri: import.meta.env.VITE_URI,
+  uri: "http://127.0.0.1:53748/graphql",
   cache: cache
 })
 

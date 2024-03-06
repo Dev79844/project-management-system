@@ -16,11 +16,11 @@ app.use('/graphql', graphqlHTTP({
     graphiql: process.env.NODE_ENV === 'development',
 }))
 
-mongoose.connect(process.env.DB)
+mongoose.connect('mongodb://mongo-service/db')
     .then(() => {
         console.log("DB Connected");
-        app.listen(process.env.PORT, () => {
-            console.log(`Server running on ${process.env.PORT}`);
+        app.listen(5000, () => {
+            console.log(`Server running on 5000`);
         })
     })
     .catch(err => {
